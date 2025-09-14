@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text → Image Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>✨ AI Text → Image Generator</h2>
+    <input id="prompt" type="text" placeholder="Enter your creative prompt..." />
+    <br>
+    <button onclick="generateImage()">Generate</button>
+    <button id="downloadBtn" onclick="downloadImage()">⬇️ Save Image</button>
+    <div id="loading">⏳ Generating your masterpiece...</div>
+    <img id="result" src="" alt="Generated image will appear here" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
