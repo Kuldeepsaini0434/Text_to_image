@@ -14,7 +14,7 @@ from diffusers import DiffusionPipeline
 from PIL import Image
 import time
 
-# ⚡ Load the SDXL pipeline
+#  Load the SDXL pipeline
 model_id = "stabilityai/stable-diffusion-xl-base-1.0"
 
 # Use float16 only if GPU is available
@@ -26,7 +26,7 @@ pipe = DiffusionPipeline.from_pretrained(
 )
 pipe.to(device)
 
-# 🎯 Define the function to generate image
+#  Define the function to generate image
 def generate_image(prompt):
     start = time.time()
     image = pipe(prompt=prompt).images[0]
@@ -35,7 +35,7 @@ def generate_image(prompt):
     print(f"✅ Image generated in {round(end - start, 2)} seconds.")
     return image
 
-# 🔍 Test it
+#  Test it
 img = generate_image("A futuristic cyberpunk city skyline at night, highly detailed, 4k")
 img.show()
 
@@ -55,7 +55,7 @@ ngrok.set_auth_token(NGROK_AUTH_TOKEN)
 
 # Now you can connect to ngrok
 # public_url = ngrok.connect(5000).public_url
-# print("✅ API URL:", public_url)
+# print(" API URL:", public_url)
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -79,7 +79,7 @@ def generate_route():
     b64_img = base64.b64encode(buf.getvalue()).decode("utf-8")
     return jsonify({"image": b64_img})
 
-# 🔥 Run Flask with ngrok
+#  Run Flask with ngrok
 def run_app():
     app.run(port=5000)
 
