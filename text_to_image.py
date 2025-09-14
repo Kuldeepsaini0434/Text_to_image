@@ -48,8 +48,6 @@ from pyngrok import ngrok
 import os
 
 # Get your authtoken from https://dashboard.ngrok.com/get-started/your-authtoken
-# and replace 'YOUR_NGROK_AUTHTOKEN' with your actual token
-# You can also set this as an environment variable
 NGROK_AUTH_TOKEN = "32gB8hBzPc5D8118dkwyfU2vpLM_3VvWPGYy3FEZb76LY17ds"
 
 # Authenticate ngrok
@@ -90,10 +88,12 @@ print("✅ API URL:", public_url)
 
 threading.Thread(target=run_app).start()
 
+#now check your backend connectivity
+
 import requests
 res = requests.post("https://4de8df304470.ngrok-free.app/generate",
                     json={"prompt": "A dog playing chess"})
-print(res.json().keys())
+print(res.json().keys()) 
 
 
 
