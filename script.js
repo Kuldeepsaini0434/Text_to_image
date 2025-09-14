@@ -1,4 +1,4 @@
-    const API_URL = "https://083741d98fac.ngrok-free.app/generate";  // ✅ your API URL
+    const API_URL = "https://083741d98fac.ngrok-free.app/generate";  //your API URL
     let currentImage = null;
 
     async function generateImage() {
@@ -42,4 +42,5 @@
       a.download = "generated.png";
       a.click();
     }
+
   
